@@ -13,7 +13,7 @@ const data = [
     {
         id:Math.floor(Math.random() * 100),
         imgSrc:img1,
-        desTitle:"",
+        desTitle:"Moscow City",
         location:"Moscow",
         garde:""
     },

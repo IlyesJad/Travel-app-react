@@ -5,16 +5,26 @@ import {AiFillCloseCircle} from 'react-icons/ai'
 import {TbGridDots} from 'react-icons/tb'
 const Navbar = () => {
   const [active,setActive] = useState('navBar');
+  const [transparent,setTransparent] = useState('header');
   const showNav =()=>{
     setActive('navBar activeNavbar')
   }
   const removeNav=()=>{
     setActive('navBar')
   }
-  console.log(active)
+  const addBg = ()=>{
+    if(window.scrollY>=10){
+      setTransparent('header activeHeader')
+    }else{
+      setTransparent('header')
+    }
+  }
+  window.addEventListener('scroll',addBg)
+  console.log(transparent)
+  
   return (
     <section className='navBarSection'>
-      <div className='header'>
+      <div className={transparent}>
         <div className='logoDiv'>
           <a className='logo' href='#'>
             <h1 className='flex'><CgBee className='icon' />Travel</h1>
